@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swism Client — The Ultimate Minecraft PvP Client</title>
+  <meta name="description" content="Swism Client delivers massive FPS boosts, a clean customizable UI, competitive PvP optimization, and 50+ built-in modules. Download now and dominate.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23e84040'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Inter,sans-serif' font-weight='900' font-size='18'>S</text></svg>">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Particle Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ░░░ NAVBAR ░░░ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">S</div>
+        <span>SWISM CLIENT</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a href="#download" class="nav-cta">
+        <i class="fas fa-download"></i> Download
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section class="hero" id="home">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-grid"></div>
+
+    <div class="container">
+      <!-- Left: Copy -->
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          v1.0 Now Available
+        </div>
+
+        <h1 class="hero-title">
+          Dominate Every<br>
+          Fight with <span class="gradient">Swism</span>
+        </h1>
+
+        <p class="hero-sub">
+          Ultra-fast performance, buttery-smooth gameplay, and a sleek interface purpose-built for competitive Minecraft PvP.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn-brand">
+            <i class="fas fa-gamepad"></i> Launch Swism
+          </a>
+          <a href="#features" class="btn-outline">
+            <i class="fas fa-bolt"></i> View Features
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Performance Dashboard -->
+      <div class="hero-visual reveal-right">
+        <div class="hero-dashboard">
+          <div class="dash-header">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <span class="dash-title">Swism Performance Monitor</span>
+          </div>
+          <div class="dash-body">
+            <div class="dash-fps-display">
+              <div class="dash-fps-label">FPS</div>
+              <div class="dash-fps-number" data-target="724">724</div>
+              <div class="dash-fps-bar"><div class="dash-fps-fill"></div></div>
+            </div>
+            <div class="dash-stats-row">
+              <div class="dash-stat-mini">
+                <span class="dash-stat-val">8ms</span>
+                <span class="dash-stat-lbl">Ping</span>
+              </div>
+              <div class="dash-stat-mini">
+                <span class="dash-stat-val">1.2GB</span>
+                <span class="dash-stat-lbl">RAM</span>
+              </div>
+              <div class="dash-stat-mini">
+                <span class="dash-stat-val">12%</span>
+                <span class="dash-stat-lbl">CPU</span>
+              </div>
+              <div class="dash-stat-mini">
+                <span class="dash-stat-val">24%</span>
+                <span class="dash-stat-lbl">GPU</span>
+              </div>
+            </div>
+            <div class="dash-modules-row">
+              <div class="dash-mod active"><i class="fas fa-running"></i> Sprint</div>
+              <div class="dash-mod active"><i class="fas fa-sun"></i> Fullbright</div>
+              <div class="dash-mod"><i class="fas fa-crosshairs"></i> Hitbox</div>
+              <div class="dash-mod active"><i class="fas fa-keyboard"></i> Keys</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ STATS ░░░ -->
+  <section class="stats" id="stats">
+    <div class="container stagger">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number" data-target="24500" data-suffix="+">0</div>
+        <div class="stat-label">Active Players</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+        <div class="stat-number" data-target="450" data-suffix="%" data-prefix="+">0</div>
+        <div class="stat-label">FPS Boost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-puzzle-piece"></i></div>
+        <div class="stat-number" data-target="50" data-suffix="+">0</div>
+        <div class="stat-label">Built-in Modules</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-sync-alt"></i></div>
+        <div class="stat-number" data-target="200" data-suffix="+">0</div>
+        <div class="stat-label">Updates Shipped</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ FEATURES ░░░ -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-star"></i> Core Features</div>
+        <h2 class="section-title">Everything You Need to <span class="hl">Win</span></h2>
+        <p class="section-subtitle">Swism is packed with tools that give you a real competitive edge — without sacrificing performance or style.</p>
+      </div>
+
+      <div class="features-grid stagger">
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-tachometer-alt"></i></div>
+          <h3>Massive FPS Boost</h3>
+          <p>Advanced rendering optimizations deliver up to 450% higher frame rates. Smooth gameplay even on low-end hardware.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-palette"></i></div>
+          <h3>Clean & Custom UI</h3>
+          <p>A sleek, modern interface you can fully customize — colors, layout, and HUD elements all yours to configure.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-crosshairs"></i></div>
+          <h3>PvP Optimization</h3>
+          <p>Hit registration tweaks, reach indicator, CPS display, and combo counters designed for competitive play.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-wind"></i></div>
+          <h3>Buttery Smooth</h3>
+          <p>Zero input lag, optimized tick rates, and smart pre-loading eliminate stutters and micro-freezes entirely.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-cubes"></i></div>
+          <h3>50+ Built-in Modules</h3>
+          <p>Sprint, Fullbright, ArmorHUD, Keystrokes, Hitboxes, custom crosshairs — all toggleable with one click.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-cloud-download-alt"></i></div>
+          <h3>Frequent Updates</h3>
+          <p>New features, bug fixes, and compatibility patches land regularly. Always stay ahead of the competition.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ico"><i class="fas fa-shield-alt"></i></div>
+          <h3>Secure & Stable</h3>
+          <p>No data collection, no shady code. Open and transparent — your account and PC are always safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ SHOWCASE — Performance Comparison ░░░ -->
+  <section class="showcase section" id="showcase">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-chart-bar"></i> Performance</div>
+        <h2 class="section-title">See the <span class="hl">Difference</span></h2>
+        <p class="section-subtitle">Real benchmarks. No gimmicks. Swism outperforms every other client — and it's not even close.</p>
+      </div>
+
+      <!-- FPS Comparison -->
+      <div class="perf-comparison reveal">
+        <div class="perf-block">
+          <h3 class="perf-heading"><i class="fas fa-tachometer-alt"></i> Frames Per Second</h3>
+          <div class="perf-bars">
+            <div class="perf-row">
+              <div class="perf-label">Vanilla</div>
+              <div class="perf-track">
+                <div class="perf-fill vanilla" data-width="14"></div>
+              </div>
+              <div class="perf-value dim">60 FPS</div>
+            </div>
+            <div class="perf-row">
+              <div class="perf-label">Other Clients</div>
+              <div class="perf-track">
+                <div class="perf-fill others" data-width="28"></div>
+              </div>
+              <div class="perf-value dim">140 FPS</div>
+            </div>
+            <div class="perf-row highlight">
+              <div class="perf-label brand">Swism Client</div>
+              <div class="perf-track">
+                <div class="perf-fill swism" data-width="95"></div>
+              </div>
+              <div class="perf-value brand-val">700+ FPS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Stats Grid -->
+      <div class="perf-grid stagger">
+        <div class="perf-card">
+          <div class="perf-card-icon"><i class="fas fa-memory"></i></div>
+          <div class="perf-card-stat">48%</div>
+          <div class="perf-card-label">Less RAM Usage</div>
+          <div class="perf-card-bar"><div class="perf-card-fill" data-width="48"></div></div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-card-icon"><i class="fas fa-clock"></i></div>
+          <div class="perf-card-stat">3.2s</div>
+          <div class="perf-card-label">Launch Time</div>
+          <div class="perf-card-bar"><div class="perf-card-fill" data-width="25"></div></div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-card-icon"><i class="fas fa-wifi"></i></div>
+          <div class="perf-card-stat">8ms</div>
+          <div class="perf-card-label">Avg. Latency</div>
+          <div class="perf-card-bar"><div class="perf-card-fill" data-width="12"></div></div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-card-icon"><i class="fas fa-microchip"></i></div>
+          <div class="perf-card-stat">12%</div>
+          <div class="perf-card-label">CPU Usage</div>
+          <div class="perf-card-bar"><div class="perf-card-fill" data-width="15"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ WHY CHOOSE US ░░░ -->
+  <section class="why-us section" id="why-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-trophy"></i> Why Swism</div>
+        <h2 class="section-title">Built Different. <span class="hl">Built to Win.</span></h2>
+        <p class="section-subtitle">We don't just make another Minecraft client — we build the tool serious players actually want.</p>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="why-row">
+        <div class="why-content reveal-left">
+          <span class="section-badge"><i class="fas fa-bolt"></i> Performance</span>
+          <h3>Raw Speed, Zero Compromise</h3>
+          <p>Our custom rendering pipeline and memory management eliminate every bottleneck. You get higher FPS, lower latency, and smoother gameplay — period.</p>
+          <ul class="check-list">
+            <li><i class="fas fa-check"></i> Up to 450% FPS improvement</li>
+            <li><i class="fas fa-check"></i> Optimized chunk loading & rendering</li>
+            <li><i class="fas fa-check"></i> Smart memory management</li>
+            <li><i class="fas fa-check"></i> Zero input lag technology</li>
+          </ul>
+        </div>
+        <div class="why-visual reveal-right">
+          <div class="why-illustration">
+            <div class="illus-header"><span class="illus-dot red"></span><span class="illus-dot yellow"></span><span class="illus-dot green"></span><span class="illus-title">performance.config</span></div>
+            <div class="illus-body">
+              <div class="illus-line"><span class="illus-key">render_engine</span><span class="illus-eq">=</span><span class="illus-val">"optimized_v3"</span></div>
+              <div class="illus-line"><span class="illus-key">chunk_preload</span><span class="illus-eq">=</span><span class="illus-val green-val">true</span></div>
+              <div class="illus-line"><span class="illus-key">max_fps</span><span class="illus-eq">=</span><span class="illus-val num-val">unlimited</span></div>
+              <div class="illus-line"><span class="illus-key">input_delay</span><span class="illus-eq">=</span><span class="illus-val num-val">0ms</span></div>
+              <div class="illus-line"><span class="illus-key">memory_mode</span><span class="illus-eq">=</span><span class="illus-val">"aggressive_gc"</span></div>
+              <div class="illus-line"><span class="illus-key">async_chunks</span><span class="illus-eq">=</span><span class="illus-val green-val">true</span></div>
+              <div class="illus-line"><span class="illus-key">particle_culling</span><span class="illus-eq">=</span><span class="illus-val green-val">true</span></div>
+              <div class="illus-cursor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="why-row flip">
+        <div class="why-content reveal-right">
+          <span class="section-badge"><i class="fas fa-gamepad"></i> Design</span>
+          <h3>Clean Design, Total Control</h3>
+          <p>Every pixel is intentional. Swism's interface is designed to stay out of your way during gameplay while giving you total control in the settings.</p>
+          <ul class="check-list">
+            <li><i class="fas fa-check"></i> Modern dark theme UI</li>
+            <li><i class="fas fa-check"></i> Drag-and-drop HUD editor</li>
+            <li><i class="fas fa-check"></i> Customizable color accents</li>
+            <li><i class="fas fa-check"></i> Intuitive module toggles</li>
+          </ul>
+        </div>
+        <div class="why-visual reveal-left">
+          <div class="why-illustration">
+            <div class="illus-header"><span class="illus-dot red"></span><span class="illus-dot yellow"></span><span class="illus-dot green"></span><span class="illus-title">modules.json</span></div>
+            <div class="illus-body">
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-running"></i> Sprint</span><span class="illus-toggle on">ON</span></div>
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-sun"></i> Fullbright</span><span class="illus-toggle on">ON</span></div>
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-shield-alt"></i> ArmorHUD</span><span class="illus-toggle on">ON</span></div>
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-keyboard"></i> Keystrokes</span><span class="illus-toggle on">ON</span></div>
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-crosshairs"></i> Crosshair</span><span class="illus-toggle off">OFF</span></div>
+              <div class="illus-mod"><span class="illus-mod-name"><i class="fas fa-cube"></i> Hitboxes</span><span class="illus-toggle off">OFF</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ PRICING ░░░ -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-tag"></i> Pricing</div>
+        <h2 class="section-title">Pick Your <span class="hl">Plan</span></h2>
+        <p class="section-subtitle">Start free, upgrade when you're ready. No hidden fees, no subscriptions you can't cancel.</p>
+      </div>
+
+      <div class="pricing-grid stagger">
+        <!-- Free -->
+        <div class="price-card">
+          <h3>Free</h3>
+          <p class="price-desc">Get started at zero cost</p>
+          <div class="price-amount">
+            <span class="cur">$</span>
+            <span class="val">0</span>
+          </div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Core FPS optimizations</li>
+            <li><i class="fas fa-check"></i> 15 essential modules</li>
+            <li><i class="fas fa-check"></i> Basic HUD customization</li>
+            <li><i class="fas fa-check"></i> Community support</li>
+            <li class="off"><i class="fas fa-times"></i> Priority updates</li>
+            <li class="off"><i class="fas fa-times"></i> Premium modules</li>
+          </ul>
+          <a href="#download" class="price-btn ghost">Get Started</a>
+        </div>
+
+        <!-- Swism+ (featured) -->
+        <div class="price-card hot">
+          <div class="hot-badge">Most Popular</div>
+          <h3>Swism+</h3>
+          <p class="price-desc">The full competitive experience</p>
+          <div class="price-amount">
+            <span class="cur">$</span>
+            <span class="val">5</span>
+            <span class="per">/month</span>
+          </div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Maximum FPS boost</li>
+            <li><i class="fas fa-check"></i> All 50+ modules unlocked</li>
+            <li><i class="fas fa-check"></i> Full HUD editor</li>
+            <li><i class="fas fa-check"></i> Priority support & updates</li>
+            <li><i class="fas fa-check"></i> Custom themes & profiles</li>
+            <li><i class="fas fa-check"></i> No ads, ever</li>
+          </ul>
+          <a href="#download" class="price-btn fill">Get Swism+</a>
+        </div>
+
+        <!-- Lifetime -->
+        <div class="price-card">
+          <h3>Lifetime</h3>
+          <p class="price-desc">One payment, forever yours</p>
+          <div class="price-amount">
+            <span class="cur">$</span>
+            <span class="val">25</span>
+          </div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Everything in Swism+</li>
+            <li><i class="fas fa-check"></i> Lifetime access</li>
+            <li><i class="fas fa-check"></i> Early beta features</li>
+            <li><i class="fas fa-check"></i> Exclusive cosmetics</li>
+            <li><i class="fas fa-check"></i> Founding member badge</li>
+            <li><i class="fas fa-check"></i> Direct dev support</li>
+          </ul>
+          <a href="#download" class="price-btn ghost">Go Lifetime</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ TESTIMONIALS ░░░ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-comment-dots"></i> Community</div>
+        <h2 class="section-title">Trusted by <span class="hl">Thousands</span></h2>
+        <p class="section-subtitle">Real players, real feedback. Here's what the Swism community has to say.</p>
+      </div>
+
+      <div class="testimonials-grid stagger">
+        <div class="test-card">
+          <div class="test-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="test-text">"My FPS literally tripled and the UI is the cleanest I've ever used. Switched from Lunar and never looked back."</p>
+          <div class="test-author">
+            <div class="test-avatar">JK</div>
+            <div>
+              <div class="test-name">JukeboxKid</div>
+              <div class="test-role">Diamond League PvP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="test-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="test-text">"The module manager is insane. Toggle everything instantly and the hotkey system makes it feel like a real pro tool."</p>
+          <div class="test-author">
+            <div class="test-avatar">SN</div>
+            <div>
+              <div class="test-name">SkyNova</div>
+              <div class="test-role">Hypixel Bedwars Main</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="test-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="test-text">"Finally a client that doesn't feel sketchy. The devs are transparent and the updates actually fix things. Solid work."</p>
+          <div class="test-author">
+            <div class="test-avatar">CR</div>
+            <div>
+              <div class="test-name">CraftRealm</div>
+              <div class="test-role">Content Creator</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ FAQ ░░░ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-question-circle"></i> FAQ</div>
+        <h2 class="section-title">Got <span class="hl">Questions?</span></h2>
+        <p class="section-subtitle">Common questions answered. Still stuck? Join our Discord and ask the community.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">
+            Is Swism Client safe to use?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Absolutely. Swism doesn't collect any personal data, doesn't inject into Minecraft's code in harmful ways, and is fully transparent. We prioritize your account security and PC safety above everything else.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Will it get me banned on Hypixel or other servers?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Swism is designed to comply with server rules. It focuses on performance and cosmetic features — not unfair advantages. Most modules are fully allowed on Hypixel, Minemen, and other competitive servers. We clearly label any modules that may not be server-safe.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What Minecraft versions does Swism support?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Swism currently supports Minecraft 1.8.9, 1.12.2, 1.16.5, 1.19.4, and 1.20.4 with more versions being added regularly. Version switching is built right into the launcher — one click and you're on a different version.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Does it work with Forge and Fabric mods?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes! Swism has built-in support for both Forge and Fabric mod loaders. You can install your favourite mods directly from the client, manage per-profile modpacks, and use Swism's optimizations alongside any compatible mods.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How do I install and set up the client?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Download the installer, run it, and sign in with your Microsoft account. That's it — no manual file copying, no Java configuration. Swism handles everything automatically and you'll be in-game in under a minute.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I use it on low-end hardware?
+            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Swism is specifically optimized for low-end machines. Our performance mode strips away unnecessary rendering overhead to squeeze out every possible frame. Players on budget laptops regularly report 2–3× FPS improvements.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ░░░ FINAL CTA ░░░ -->
+  <section class="final-cta section" id="download">
+    <div class="final-cta-glow"></div>
+    <div class="container reveal">
+      <h2>Ready to <span class="gradient">Dominate?</span></h2>
+      <p>Join 24,000+ players who already switched to Swism. Download now — it's free, fast, and easy.</p>
+      <a href="#" class="btn-glow">
+        <i class="fas fa-download"></i> Download Swism Client
+      </a>
+    </div>
+  </section>
+
+  <!-- ░░░ FOOTER ░░░ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">S</div>
+            <span>SWISM CLIENT</span>
+          </a>
+          <p>The ultimate Minecraft PvP client. Built for speed, designed for winners.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#showcase">Showcase</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#download">Download</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">Changelog</a>
+          <a href="#">Status</a>
+          <a href="#">API</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="#">Discord Server</a>
+          <a href="#">Partner Servers</a>
+          <a href="#">Bug Reports</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Swism Client 2026. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
